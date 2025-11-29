@@ -108,10 +108,81 @@ pytest tests/products/test_get_products.py::TestGetProducts
 pytest tests/products/test_get_products.py::TestGetProducts::test_get_products_returns_200
 ```
 
+### Run tests by marker
+```bash
+# Run smoke tests only
+pytest -m smoke
+
+# Run critical tests
+pytest -m critical
+
+# Run regression tests
+pytest -m regression
+```
+
 ### Run tests with detailed output
 ```bash
 pytest -v --tb=long
 ```
+
+## 📊 Allure Reporting
+
+This framework uses **Allure Report** for beautiful, interactive test reports with detailed insights.
+
+### Prerequisites
+
+Install Allure command-line tool:
+
+**macOS:**
+```bash
+brew install allure
+```
+
+**Linux:**
+```bash
+sudo apt-add-repository ppa:qameta/allure
+sudo apt-get update
+sudo apt-get install allure
+```
+
+**Windows:**
+```bash
+scoop install allure
+```
+
+Or download from: https://github.com/allure-framework/allure2/releases
+
+### Generate and View Reports
+
+1. **Run tests** (results are saved to `allure-results/`):
+   ```bash
+   pytest
+   ```
+
+2. **Generate HTML report:**
+   ```bash
+   allure generate allure-results --clean -o allure-report
+   ```
+
+3. **Open report in browser:**
+   ```bash
+   allure open allure-report
+   ```
+
+Or use the shortcut to serve the report directly:
+```bash
+allure serve allure-results
+```
+
+### Report Features
+
+- 📈 **Dashboard** - Overview with pass/fail statistics and trends
+- 📋 **Test Suites** - Organized by Epic > Feature > Story
+- 🔍 **Test Details** - Step-by-step execution with attachments
+- 📎 **Attachments** - Request/response payloads in JSON format
+- ⏱️ **Timeline** - Visual test execution timeline
+- 🏷️ **Categories** - Group failures by type
+- 📊 **Graphs** - Severity distribution and duration charts
 
 ## 🏗️ Architecture
 
@@ -235,6 +306,7 @@ class TestGetUsers:
 |---------|---------|-------------|
 | pytest | 7.4.3 | Testing framework |
 | requests | 2.31.0 | HTTP library |
+| allure-pytest | 2.15.2 | Allure reporting integration |
 
 ## 📄 License
 
