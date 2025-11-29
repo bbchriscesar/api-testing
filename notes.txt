@@ -1,0 +1,7 @@
+Benefits of this Framework:
+
+Separation of Concerns - API logic is separate from test logic
+Reusability - Clients can be reused across multiple tests
+Maintainability - Changes to endpoints only need updates in one place
+Configuration - Environment variables allow different settings per environment
+Fixtures - Shared setup/teardown logic via pytest fixtures
