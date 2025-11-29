@@ -95,17 +95,17 @@ pytest -v
 
 ### Run specific test file
 ```bash
-pytest tests/products/test_get_products.py
+pytest tests/with_reports/test_get_products.py
 ```
 
 ### Run specific test class
 ```bash
-pytest tests/products/test_get_products.py::TestGetProducts
+pytest tests/with_reports/test_get_products.py::TestGetProducts
 ```
 
 ### Run specific test
 ```bash
-pytest tests/products/test_get_products.py::TestGetProducts::test_get_products_returns_200
+pytest tests/with_reports/test_get_products.py::TestGetProducts::test_get_products_returns_200
 ```
 
 ### Run tests by marker
